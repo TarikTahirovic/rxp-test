@@ -1,0 +1,28 @@
+{
+  "root": "apps/rezolve-e2e",
+  "sourceRoot": "apps/rezolve-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/rezolve-e2e/cypress.json",
+        "devServerTarget": "rezolve:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "rezolve:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rezolve-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["rezolve"]
+}

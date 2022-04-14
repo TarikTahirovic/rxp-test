@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "rezolve": "apps/rezolve",
+    "rezolve-e2e": "apps/rezolve-e2e"
+  }
+}
