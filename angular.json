@@ -2,6 +2,19 @@
   "version": 2,
   "projects": {
     "rezolve": "apps/rezolve",
-    "rezolve-e2e": "apps/rezolve-e2e"
+    "rezolve-e2e": "apps/rezolve-e2e",
+    "rxp-admin": "apps/rxp-admin",
+    "rxp-admin-e2e": "apps/rxp-admin-e2e",
+    "rxp-any-app-feature-dashboard": "libs/rxp/any-app/feature/dashboard",
+    "rxp-any-app-feature-dashboard-e2e": "apps/rxp-any-app-feature-dashboard-e2e",
+    "rxp-default-data-access-priceing": "libs/rxp/default/data-access/priceing",
+    "rxp-default-feature-dashboard": "libs/rxp/default/feature/dashboard",
+    "shared-data-access-targets": "libs/shared/data-access/targets",
+    "shared-ui-rezolve-buttons": "libs/shared/ui/rezolve-buttons",
+    "shared-ui-rezolve-buttons-e2e": "apps/shared-ui-rezolve-buttons-e2e",
+    "shared-ui-rezolve-icons": "libs/shared/ui/rezolve-icons",
+    "shared-ui-rezolve-icons-e2e": "apps/shared-ui-rezolve-icons-e2e",
+    "shared-ui-rezolve-inputs": "libs/shared/ui/rezolve-inputs",
+    "shared-ui-rezolve-inputs-e2e": "apps/shared-ui-rezolve-inputs-e2e"
   }
 }

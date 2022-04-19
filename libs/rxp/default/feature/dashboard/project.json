@@ -1,0 +1,43 @@
+{
+  "projectType": "library",
+  "root": "libs/rxp/default/feature/dashboard",
+  "sourceRoot": "libs/rxp/default/feature/dashboard/src",
+  "prefix": "rxp-default",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rxp/default/feature/dashboard"],
+      "options": {
+        "project": "libs/rxp/default/feature/dashboard/ng-package.json",
+        "tailwindConfig": "libs/rxp/default/feature/dashboard/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rxp/default/feature/dashboard/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rxp/default/feature/dashboard/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rxp/default/feature/dashboard"],
+      "options": {
+        "jestConfig": "libs/rxp/default/feature/dashboard/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rxp/default/feature/dashboard/src/**/*.ts",
+          "libs/rxp/default/feature/dashboard/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

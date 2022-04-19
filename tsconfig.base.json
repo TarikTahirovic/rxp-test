@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rezolve/buttons": ["libs/shared/ui/rezolve-buttons/src/index.ts"],
+      "@rezolve/icons": ["libs/shared/ui/rezolve-icons/src/index.ts"],
+      "@rezolve/inputs": ["libs/shared/ui/rezolve-inputs/src/index.ts"],
+      "@rezolve/targets-data-access": ["libs/shared/data-access/targets/src/index.ts"],
+      "@rxp/dashboard-any-app": ["libs/rxp/any-app/feature/dashboard/src/index.ts"],
+      "@rxp/dashboard-default": ["libs/rxp/default/feature/dashboard/src/index.ts"],
+      "@rxp/priceing-data-access": ["libs/rxp/default/data-access/priceing/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

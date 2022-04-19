@@ -1,0 +1,73 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/rezolve-icons",
+  "sourceRoot": "libs/shared/ui/rezolve-icons/src",
+  "prefix": "rezolve-icon",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shared/ui/rezolve-icons"],
+      "options": {
+        "project": "libs/shared/ui/rezolve-icons/ng-package.json",
+        "tailwindConfig": "libs/shared/ui/rezolve-icons/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/ui/rezolve-icons/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/ui/rezolve-icons/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/rezolve-icons"],
+      "options": {
+        "jestConfig": "libs/shared/ui/rezolve-icons/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui/rezolve-icons/src/**/*.ts", "libs/shared/ui/rezolve-icons/src/**/*.html"]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/shared/ui/rezolve-icons/.storybook"
+        },
+        "projectBuildConfig": "shared-ui-rezolve-icons:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/shared-ui-rezolve-icons",
+        "config": {
+          "configFolder": "libs/shared/ui/rezolve-icons/.storybook"
+        },
+        "projectBuildConfig": "shared-ui-rezolve-icons:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

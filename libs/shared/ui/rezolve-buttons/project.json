@@ -1,0 +1,76 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/rezolve-buttons",
+  "sourceRoot": "libs/shared/ui/rezolve-buttons/src",
+  "prefix": "rezolve-button",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shared/ui/rezolve-buttons"],
+      "options": {
+        "project": "libs/shared/ui/rezolve-buttons/ng-package.json",
+        "tailwindConfig": "libs/shared/ui/rezolve-buttons/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/ui/rezolve-buttons/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/ui/rezolve-buttons/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/rezolve-buttons"],
+      "options": {
+        "jestConfig": "libs/shared/ui/rezolve-buttons/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/rezolve-buttons/src/**/*.ts",
+          "libs/shared/ui/rezolve-buttons/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/shared/ui/rezolve-buttons/.storybook"
+        },
+        "projectBuildConfig": "shared-ui-rezolve-buttons:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/shared-ui-rezolve-buttons",
+        "config": {
+          "configFolder": "libs/shared/ui/rezolve-buttons/.storybook"
+        },
+        "projectBuildConfig": "shared-ui-rezolve-buttons:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

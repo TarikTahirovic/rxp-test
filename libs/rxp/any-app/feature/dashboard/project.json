@@ -1,0 +1,76 @@
+{
+  "projectType": "library",
+  "root": "libs/rxp/any-app/feature/dashboard",
+  "sourceRoot": "libs/rxp/any-app/feature/dashboard/src",
+  "prefix": "rxp-any-app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rxp/any-app/feature/dashboard"],
+      "options": {
+        "project": "libs/rxp/any-app/feature/dashboard/ng-package.json",
+        "tailwindConfig": "libs/rxp/any-app/feature/dashboard/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rxp/any-app/feature/dashboard/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rxp/any-app/feature/dashboard/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rxp/any-app/feature/dashboard"],
+      "options": {
+        "jestConfig": "libs/rxp/any-app/feature/dashboard/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rxp/any-app/feature/dashboard/src/**/*.ts",
+          "libs/rxp/any-app/feature/dashboard/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/rxp/any-app/feature/dashboard/.storybook"
+        },
+        "projectBuildConfig": "rxp-any-app-feature-dashboard:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/rxp-any-app-feature-dashboard",
+        "config": {
+          "configFolder": "libs/rxp/any-app/feature/dashboard/.storybook"
+        },
+        "projectBuildConfig": "rxp-any-app-feature-dashboard:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

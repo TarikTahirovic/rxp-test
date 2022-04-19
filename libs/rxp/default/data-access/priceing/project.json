@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/rxp/default/data-access/priceing",
+  "sourceRoot": "libs/rxp/default/data-access/priceing/src",
+  "prefix": "rxp",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rxp/default/data-access/priceing"],
+      "options": {
+        "project": "libs/rxp/default/data-access/priceing/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rxp/default/data-access/priceing/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rxp/default/data-access/priceing/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rxp/default/data-access/priceing"],
+      "options": {
+        "jestConfig": "libs/rxp/default/data-access/priceing/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rxp/default/data-access/priceing/src/**/*.ts",
+          "libs/rxp/default/data-access/priceing/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,28 @@
+{
+  "root": "apps/rxp-admin-e2e",
+  "sourceRoot": "apps/rxp-admin-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/rxp-admin-e2e/cypress.json",
+        "devServerTarget": "rxp-admin:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "rxp-admin:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rxp-admin-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["rxp-admin"]
+}

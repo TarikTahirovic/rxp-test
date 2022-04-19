@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/data-access/targets",
+  "sourceRoot": "libs/shared/data-access/targets/src",
+  "prefix": "rezolve",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shared/data-access/targets"],
+      "options": {
+        "project": "libs/shared/data-access/targets/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/data-access/targets/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/data-access/targets/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/data-access/targets"],
+      "options": {
+        "jestConfig": "libs/shared/data-access/targets/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/data-access/targets/src/**/*.ts",
+          "libs/shared/data-access/targets/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

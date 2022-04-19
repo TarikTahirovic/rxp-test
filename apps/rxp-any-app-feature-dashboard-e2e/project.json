@@ -1,0 +1,28 @@
+{
+  "root": "apps/rxp-any-app-feature-dashboard-e2e",
+  "sourceRoot": "apps/rxp-any-app-feature-dashboard-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/rxp-any-app-feature-dashboard-e2e/cypress.json",
+        "devServerTarget": "rxp-any-app-feature-dashboard:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "rxp-any-app-feature-dashboard:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rxp-any-app-feature-dashboard-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["rxp-any-app-feature-dashboard"]
+}
