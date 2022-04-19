@@ -16,4 +16,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: yarn nx run-many --target=build --all
+    - run: yarn ng run-many --target=build --all
