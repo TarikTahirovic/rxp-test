@@ -1,0 +1,28 @@
+{
+  "title": [
+    {
+      "pattern": "^(RR-X{4}|RR-\\d{4})",
+      "message": "Your PR title needs to be prefixed with a JIRA ticket"
+    },
+    {
+      "pattern": "\\s\\|\\s",
+      "message": "Your PR title needs delimiter between JIRA ticket and title"
+    },
+    {
+      "pattern": "\\|\\s[A-Z][a-z]+",
+      "message": "Your PR title must start with a capital letter"
+    }
+  ],
+  "head.ref": [
+    {
+      "pattern": "^(fix|docs|feat|perf|refactor|style|test|chore)\\/(RR-X{4}|RR-\\d{4})",
+      "message": "Your branch name is invalid"
+    }
+  ],
+  "changed_files": [
+    {
+      "pattern": "^[0-9]$|^1[0-5]$",
+      "message": "Your PR is too big (over 15 files)"
+    }
+  ]
+}
