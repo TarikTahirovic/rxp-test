@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { TestbuttonComponent } from './testbutton/testbutton.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, NxWelcomeComponent, TestbuttonComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
