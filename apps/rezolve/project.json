@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/rezolve",
         "index": "apps/rezolve/src/index.html",
@@ -16,13 +14,8 @@
         "polyfills": "apps/rezolve/src/polyfills.ts",
         "tsConfig": "apps/rezolve/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/rezolve/src/favicon.ico",
-          "apps/rezolve/src/assets"
-        ],
-        "styles": [
-          "apps/rezolve/src/styles.scss"
-        ],
+        "assets": ["apps/rezolve/src/favicon.ico", "apps/rezolve/src/assets"],
+        "styles": ["apps/rezolve/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -87,9 +80,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/rezolve"
-      ],
+      "outputs": ["coverage/apps/rezolve"],
       "options": {
         "jestConfig": "apps/rezolve/jest.config.js",
         "passWithNoTests": true

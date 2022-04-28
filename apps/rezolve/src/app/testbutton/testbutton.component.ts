@@ -6,6 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./testbutton.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class TestbuttonComponent {
-
-}
+export class TestbuttonComponent {}
