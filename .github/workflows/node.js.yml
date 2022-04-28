@@ -1,5 +1,6 @@
 name: CI
-on: [pull_request]
+on:
+  pull_request:
 
 jobs:
   main:
@@ -10,3 +11,10 @@ jobs:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v2
       - run: yarn install
+
+      - run: npx nx format:write
+      - run: npx nx format:check
+      - run: npx nx affected --target=lint
+      - run: npx nx affected --target=test--ci --code-coverage
+      - run: npx nx affected --target=build --parallel=3
+      - run: npx nx affected --target=e2e

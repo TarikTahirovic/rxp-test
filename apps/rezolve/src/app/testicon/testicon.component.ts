@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'rxp-test-testicon',
@@ -6,8 +6,4 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./testicon.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class TesticonComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class TesticonComponent {}
