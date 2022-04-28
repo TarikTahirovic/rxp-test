@@ -11,8 +11,9 @@ jobs:
       - uses: nrwl/nx-set-shas@v2
       - run: yarn install
 
-      - run: npx nx format:check --base=main --head=HEAD
-      - run: npx nx affected --target=lint --base=main --head=HEAD
-      - run: npx nx affected --target=test--ci --code-coverage --base=main --head=HEAD
-      - run: npx nx affected --target=build --parallel=3 --base=main --head=HEAD
-      - run: npx nx affected --target=e2e --base=main --head=HEAD
+      - run: npx nx format:write
+      - run: npx nx format:check
+      - run: npx nx affected --target=lint
+      - run: npx nx affected --target=test--ci --code-coverage
+      - run: npx nx affected --target=build --parallel=3
+      - run: npx nx affected --target=e2e
