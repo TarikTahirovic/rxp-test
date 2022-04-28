@@ -6,5 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./testicon.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class TesticonComponent {
-}
+export class TesticonComponent {}
